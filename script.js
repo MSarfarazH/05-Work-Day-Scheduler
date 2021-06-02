@@ -2,7 +2,7 @@ $(document).ready(function () {
     $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a")); //displaying current date and time
 
 $('.saveBtn').on('click', function() { //creating the function to take input text and store it into the local storage
-    console.log($(this).siblings("textarea").val());
+    console.log(this);
     var text = $(this).siblings(".description").val(); // creating containers for the input
     var time = $(this).parent().attr("id");
     localStorage.setItem(time, text);
@@ -44,5 +44,5 @@ function hourTracker() {
         }
     })
 }
-hourTracker(); //re-run function
+hourTracker();
 });
